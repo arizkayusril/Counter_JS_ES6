@@ -13,15 +13,9 @@
             font-family: "Lato", sans-serif;
             font-size: 20pt;
             font-weight: normal;
-            background: rgb(16, 212, 238);
-            /* For browsers that do not support gradients */
-            background: -webkit-linear-gradient( -90deg, lightblue, black);
-            /* For Safari 5.1 to 6.0 */
-            background: -o-linear-gradient( -90deg, lightblue, black);
-            /* For Opera 11.1 to 12.0 */
-            background: -moz-linear-gradient( -90deg, lightblue, black);
-            /* For Firefox 3.6 to 15 */
-            background: linear-gradient(-90deg, lightblue, black);
+            background-image: url("img/moon.jpg");
+            background-size: cover;
+            color: rgb(205, 236, 236);
             /* Standard syntax */
         }
         
@@ -31,14 +25,18 @@
         }
         
         button {
-            padding: 20px;
-            background: transparent;
-            text-shadow: 1px 1px 1px #202020;
+            /* padding: 20px; */
+            height: 40px;
+            width: 40px;
+            background-color: rgb(32, 34, 34);
             font-family: "Lato", sans-serif;
             font-size: 18pt;
-            border: 1px solid rgb(27, 184, 236);
-            color: rgb(237, 240, 241);
-            border-radius: 13%;
+            color: rgb(28, 183, 235);
+            border-radius: 50%;
+            
+        }
+        p{
+            font-size: 15px;
         }
     </style>
 </head>
@@ -47,20 +45,23 @@
     <div class="main">
 
         <h3>Click Counter</h3>
-        <button id="plus">+</button>
-        <button id="answer">...</button>
+        
+        <h3 id="answer">0</h3>
         <button id="minus">-</button>
+        <button id="plus">+</button>
+
+        <p>@copyright by ArizkaY</p>
         
+
+
+
         
-
-
-
-        <h5>Counter</h5>
 
     </div>
 
 
     <script>
+      
         var button = document.getElementById("plus"),
             count = 0;
         button.onclick = function() {
@@ -72,13 +73,20 @@
             count = 0;
         button.onclick = function() {
             count -= 1;
+            if (count >= 0){
             button.innerHTML = " " + count;
+
+            }else{
+                alert ("tidak bisa kurang !");
+            }
+        
         };
         
-        var button = document.getElementById("answer"),
-            count = 0;
+        var button = document.getElementById("answer");
+            
         
     </script>
+
 </body>
 
 </html>
